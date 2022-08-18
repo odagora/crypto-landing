@@ -22,11 +22,91 @@
         </div>
     </header>
     <main>
-        <section></section>
+        <section class="main-exchange-container">
+            <div class="background-image"></div>
+            <div class="main-exchange-container__title">
+                <h2>Visibilizamos todas las tasas de cambio.</h2>
+                <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.</p>
+            </div>
+            <section class="main-tables-container">
+                <div class="main-currency-table" id="currency-table">
+                    <div class="currency-table__title">
+                        <p>Monedas</p>
+                    </div>
+                    <div class="currency-table__container">
+                        <table>
+                            <tr>
+                                <td class="table--top-left table-left">Bitcoin</td>
+                                <td class="table--top-right table-right">1.96 <span class="down"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="table-left">Ethereum</td>
+                                <td class="table-right">0.07 <span class="up"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="table-left">Ripple</td>
+                                <td class="table-right">2.15 <span class="down"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="table--bottom-left table-left">Stellar</td>
+                                <td class="table--bottom-right table-right">4.96 <span class="down"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="#commission-table" class="right"></a>
+                    <div class="currency-table__date">
+                        <p><b>Actualizado: </b><span id="current-date"></span></p>
+                    </div>
+                </div>
+                <div class="main-commission-table" id="commission-table">
+                    <div class="commission-table__title">
+                        <p>Comisiones</p>
+                    </div>
+                    <div class="commission-table__container">
+                        <table>
+                            <tr>
+                                <td class="table--top-left table-left">Bitrade</td>
+                                <td class="table--top-right table-right">12.96</td>
+                            </tr>
+                            <tr>
+                                <td class="table-left">Bitpreco</td>
+                                <td class="table-right">13.07</td>
+                            </tr>
+                            <tr>
+                                <td class="table-left">Novadax</td>
+                                <td class="table-right">13.15</td>
+                            </tr>
+                            <tr>
+                                <td class="table--bottom-left table-left">Coinext</td>
+                                <td class="table--bottom-right table-right">14.96</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="#currency-table" class="left"></a>
+                    <div class="commission-table__date">
+                        <p><b>Actualizado: </b><span id="commision-date"></span></p>
+                    </div>
+                </div>
+            </section>
+        </section>
         <section></section>
         <section></section>
         <section></section>
     </main>
     <footer></footer>
+    <script>
+        const currencyField = document.getElementById('current-date')
+        const commisionField = document.getElementById('commision-date')
+        const date = new Date()
+        const options = {
+            day: '2-digit',
+            month: 'long',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: false
+        }
+        currencyField.innerHTML = new Intl.DateTimeFormat('es-CO', options).format(date)
+        commisionField.innerHTML = new Intl.DateTimeFormat('es-CO', options).format(date)
+    </script>
 </body>
 </html>
