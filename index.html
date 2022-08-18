@@ -53,7 +53,7 @@
                             </tr>
                         </table>
                     </div>
-                    <a href="#commission-table" class="right"></a>
+                    <span class="right" id="right-table-arrow"></span>
                     <div class="currency-table__date">
                         <p><b>Actualizado: </b><span id="current-date"></span></p>
                     </div>
@@ -82,7 +82,7 @@
                             </tr>
                         </table>
                     </div>
-                    <a href="#currency-table" class="left"></a>
+                    <span class="left" id="left-table-arrow"></span>
                     <div class="commission-table__date">
                         <p><b>Actualizado: </b><span id="commision-date"></span></p>
                     </div>
@@ -95,6 +95,7 @@
     </main>
     <footer></footer>
     <script>
+        //Current Date formatting
         const currencyField = document.getElementById('current-date')
         const commisionField = document.getElementById('commision-date')
         const date = new Date()
@@ -107,6 +108,23 @@
         }
         currencyField.innerHTML = new Intl.DateTimeFormat('es-CO', options).format(date)
         commisionField.innerHTML = new Intl.DateTimeFormat('es-CO', options).format(date)
+    </script>
+    <script>
+        //Tables slider
+        const currencyTable = document.getElementById('currency-table')
+        const commissionTable = document.getElementById('commission-table')
+        const rightTableArrow = document.getElementById('right-table-arrow')
+        const leftTableArrow = document.getElementById('left-table-arrow')
+
+        rightTableArrow.addEventListener('click', () => {
+            currencyTable.style.display = 'none'
+            commissionTable.style.display = 'block'
+        })
+
+        leftTableArrow.addEventListener('click', () => {
+            commissionTable.style.display = 'none'
+            currencyTable.style.display = 'block'
+        })
     </script>
 </body>
 </html>

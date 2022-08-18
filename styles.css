@@ -141,7 +141,7 @@ main {
     color: #757575;
 }
 
-.main-tables-container {
+/* .main-tables-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -151,25 +151,29 @@ main {
 
 .main-tables-container::-webkit-scrollbar {
     display: none;
-}
+} */
 
-.main-currency-table {
+/* .main-currency-table {
     padding-left: var(--margin-center-table);
     margin-right: calc(var(--margin-center-table) / 2);
 }
 .main-commission-table {
 	padding-right: var(--margin-center-table);
 	margin-left: calc(var(--margin-center-table) / 2);
-}
-
+} */
 
 .main-currency-table,
 .main-commission-table {
-    width: 100%;
-    min-width: 270px;
+    margin: 0 auto;
+    width: 70%;
+    min-width: 235px;
     max-width: 500px;
     height: auto;
     font-family: 'Inter', sans-serif;
+}
+
+.main-commission-table {
+    display: none;
 }
 
 .main-currency-table .currency-table__title,
