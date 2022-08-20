@@ -142,9 +142,22 @@ main {
     color: #757575;
 }
 
+.main-tables-container {
+    padding: 0 3px;
+    display: flex;
+    gap: 60px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+}
+
+.main-tables-container::-webkit-scrollbar {
+    display: none;
+}
+
 .main-currency-table,
 .main-commission-table {
-    margin: 0 auto;
     width: 70%;
     min-width: 235px;
     max-width: 500px;
@@ -152,8 +165,12 @@ main {
     font-family: 'Inter', sans-serif;
 }
 
+.main-currency-table {
+    margin-left: 40px;
+}
+
 .main-commission-table {
-    display: none;
+    margin-right: 40px;
 }
 
 .main-currency-table .currency-table__title,

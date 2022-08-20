@@ -28,7 +28,7 @@
                 <h2>Visibilizamos todas las tasas de cambio.</h2>
                 <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.</p>
             </div>
-            <section class="main-tables-container">
+            <section class="main-tables-container" id="currency">
                 <div class="main-currency-table" id="currency-table">
                     <div class="currency-table__title">
                         <p>Monedas</p>
@@ -175,19 +175,40 @@
     </script>
     <script>
         //Tables slider
-        const currencyTable = document.getElementById('currency-table')
-        const commissionTable = document.getElementById('commission-table')
         const rightTableArrow = document.getElementById('right-table-arrow')
         const leftTableArrow = document.getElementById('left-table-arrow')
+        const currencyContainer = document.getElementById('currency')
+        const currencyTable = document.getElementsByClassName('main-currency-table')
+        const tableSize = currencyTable[0].clientWidth
+        let scrollAmount = 0
+
+        currencyTable.scrollLeft = tableSize
+        leftTableArrow.style.display = 'none'
 
         rightTableArrow.addEventListener('click', () => {
-            currencyTable.style.display = 'none'
-            commissionTable.style.display = 'block'
+            scrollAmount = currencyTable.scrollLeft + tableSize
+            currencyContainer.scroll({
+                left: scrollAmount,
+                behavior: 'smooth'
+            })
+
+            if (scrollAmount > cardSize) {
+                leftTableArrow.style.display = 'inline-block'
+                rightTableArrow.style.display = 'none'
+            }
         })
 
         leftTableArrow.addEventListener('click', () => {
-            commissionTable.style.display = 'none'
-            currencyTable.style.display = 'block'
+            scrollAmount = currencyTable.scrollLeft - tableSize
+            currencyContainer.scroll({
+                left: scrollAmount,
+                behavior: 'smooth'
+            })
+
+            if (scrollAmount < cardSize) {
+                leftTableArrow.style.display = 'none'
+                rightTableArrow.style.display = 'inline-block'
+            }
         })
     </script>
     <script>
