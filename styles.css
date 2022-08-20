@@ -22,6 +22,7 @@
 html {
     font-size: 62.5%;
     font-family: 'DM Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -399,7 +400,7 @@ main {
     background-image: url('./assets/icons/check-circle.svg');
 }
 
-.feature-detail-card .feature-detal-card__title {
+.feature-detail-card .feature-detail-card__title {
     margin-bottom: 10px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -431,4 +432,173 @@ main {
     font-weight: bold;
     line-height: 2.6rem;
     color: var(--just-white);
+}
+
+.main-pricing-container {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    padding: 65px 0;
+    text-align: center;
+}
+
+.main-pricing-container .pricing-container__title {
+    margin: 0 auto;
+    width: 90%;
+    min-width: 288px;
+    max-width: 500px;
+}
+
+.main-pricing-container .pricing-container__title h2 {
+    margin-bottom: 24px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+
+.main-pricing-container .pricing-container__title p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+.pricing-container__slider {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    gap: 25px;
+    height: 316px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+}
+
+.pricing-container__slider::-webkit-scrollbar {
+    display: none;
+}
+
+.pricing-container__slider .pricing-card {
+    position: relative;
+    scroll-snap-align: center;
+    margin: 64px auto 0;
+    width: 70%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 247px;
+    padding: 16px;
+    background-color: var(--just-white) ;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+.pricing-container__slider .pricing-card:nth-child(1) {
+    margin: 64px 0 0 45px;
+}
+
+.pricing-container__slider .pricing-card:nth-child(3) {
+    margin: 64px 45px 0 0;
+}
+
+
+.pricing-container__slider .pricing-card .pricing-label {
+    position: absolute;
+    width: 101px;
+    height: 31px;
+    padding: 8px;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+    text-align: center;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--just-white);
+}
+
+.pricing-card .pricing-card__container .pricing-card__title {
+    margin: 16px auto 8px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+
+.pricing-card__container .pricing-card__price {
+    margin-bottom: 9px;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.pricing-card__container .pricing-card__price sup {
+    position: absolute;
+    left: calc(50% - 8px/2 - 41px);
+    top: 68px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4rem;
+}
+
+.pricing-card__container .pricing-card__description {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4rem;
+    color: #757575;
+
+}
+
+.pricing-card__container .pricing-card__button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 7px 12px 16px;
+    width: 151px;
+    height: 48px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.8rem;
+    background-color: #FAF8F7;
+    border-radius: 4px;
+    border: 2px solid var(--bitcoin-orange);
+    cursor: pointer;
+}
+
+.pricing-card__container .pricing-card__button span {
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/arrow-right.svg');
+}
+
+.main-pricing-container .pricing-left,
+.main-pricing-container .pricing-right{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: calc(50% + 65px);
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(90%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(83%) contrast(91%);
+}
+
+.main-pricing-container .pricing-left {
+    left: 31px;
+    background-image: url('./assets/icons/chevron-left.svg');
+}
+
+.main-pricing-container .pricing-right {
+    right: 31px;
+    background-image: url('./assets/icons/chevron-right.svg');
 }
