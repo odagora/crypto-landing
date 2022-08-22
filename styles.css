@@ -619,3 +619,32 @@ main {
     right: 31px;
     background-image: url('./assets/icons/chevron-right.svg');
 }
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+.footer-container--left ul {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+.footer-container--left li {
+    margin: 10px 0;
+}
+
+.footer-container--left a {
+    text-decoration: none;
+    color: var(--just-white);
+}
+
+.footer-container--left a:hover {
+    text-decoration: underline;
+}
