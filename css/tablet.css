@@ -1,0 +1,25 @@
+.main-tables-container {
+    width: 930px;
+    margin: 0 auto;
+}
+
+.main-tables-container .left,
+.main-tables-container .right {
+    display: none;
+}
+
+.features-container__cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 930px;
+    margin: 0 auto;
+}
+
+.pricing-container__slider {
+    width: 930px;
+}
+
+.main-pricing-container .pricing-left,
+.main-pricing-container .pricing-right {
+    display: none;
+}
