@@ -432,7 +432,7 @@ main {
     width: 100%;
     min-width: 320px;
     height: 50vh;
-    background-image: url('../assets/images/bitcoinbaby2x.jpg');
+    background-image: url('../assets/images/bitcoinbaby2x.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -641,4 +641,9 @@ footer {
 
 .footer-container--left a:hover {
     text-decoration: underline;
+}
+
+.footer-container--right img {
+    width: 64px;
+    height: 50px;
 }
